@@ -6,7 +6,7 @@ const searchInput = document.querySelector('input')
 const fetchWeather = (location) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
-    fetch(`http://localhost:3000/weather?address=${location}`).then(response => {
+    fetch(`/weather?address=${location}`).then(response => {
         response.json().then(({ error, forecast, location }) => {
             if (error) {
                 return messageOne.textContent = error
